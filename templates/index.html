@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="static/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Url Shortener</title>
+
+</head>
+<body>
+
+    <h1>Welcome to Url Shortener!</h1>
+    <h3>Insert your url to shorten and get it shortened!</h3>
+
+    <br>
+    <hr>
+    <br>
+
+    <div>
+
+        <form action="/" method="post">
+            Url: <input type="text" name="url" id="url" size="50" placeholder="Enter here url" value="{{short}}">
+            {% if not success %}
+                <h3 class="error">Error: invalid url</h3>
+            {% endif %}
+
+            <br>
+            <br>
+
+            {% if copy %}
+
+                <script>
+                    var url = document.getElementById('url');
+                    url.select();
+                </script>
+
+            {% endif %}
+
+            <button type="submit">shorten</button>
+
+        </form>
+
+    </div>
+
+    <br>
+    <hr>
+
+
+</body>
+</html>
